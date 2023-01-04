@@ -32,11 +32,21 @@ class AppRoutes {
         name: 'Card',
         screen: CardScreen())
   ];
-  static Map<String, Widget Function(BuildContext)> routes = {
-    'home': (context) => const HomeScreen(),
-    'listview1': (context) => const Listview1Screen(),
-    'listview2': (context) => const Listview2Screen(),
-    'card': (context) => const CardScreen(),
-    'alert': (context) => const AlertScreen(),
-  };
+
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
+    Map<String, Widget Function(BuildContext)> appRoutes = {};
+    for (final option in menuOptions) {
+      appRoutes.addAll({option.route: (BuildContext context) => option.screen});
+    }
+
+    return appRoutes;
+  }
+
+  // static Map<String, Widget Function(BuildContext)> routes = {
+  //   'home': (context) => const HomeScreen(),
+  //   'listview1': (context) => const Listview1Screen(),
+  //   'listview2': (context) => const Listview2Screen(),
+  //   'card': (context) => const CardScreen(),
+  //   'alert': (context) => const AlertScreen(),
+  // };
 }
