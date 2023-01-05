@@ -9,11 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.getAppRoutes(),
+      theme: ThemeData.light().copyWith(
+          primaryColor: Colors.green,
+          appBarTheme: AppBarTheme(color: Colors.indigo, elevation: 0)),
     );
   }
 }

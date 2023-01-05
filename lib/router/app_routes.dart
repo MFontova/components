@@ -30,7 +30,7 @@ class AppRoutes {
         route: 'card',
         icon: Icons.card_giftcard,
         name: 'Card',
-        screen: CardScreen())
+        screen: CardScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
