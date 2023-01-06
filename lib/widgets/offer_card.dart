@@ -67,6 +67,13 @@ class OfferCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              TextButton(
+                onPressed: (() {}),
+                child: const Text(
+                  'Cancelar',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
               TextButton(onPressed: (() {}), child: const Text('Inscribirme'))
             ],
           )
