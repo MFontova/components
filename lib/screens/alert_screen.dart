@@ -5,10 +5,20 @@ class AlertScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('AlertScreen'),
+        child: ElevatedButton(
+          onPressed: (() {}),
+          child: const Text('Mostrar Alerta'),
+          // style: ElevatedButton.styleFrom(
+          //     backgroundColor: Colors.green, shape: const StadiumBorder()),
+        ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (() {
+            Navigator.pop(context);
+          }),
+          child: const Icon(Icons.close)),
     );
   }
 }
