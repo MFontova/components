@@ -4,7 +4,10 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class CustomCard2 extends StatelessWidget {
-  const CustomCard2({super.key});
+  const CustomCard2({super.key, required this.imageUrl, this.cardName});
+
+  final String imageUrl;
+  final String? cardName;
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +18,20 @@ class CustomCard2 extends StatelessWidget {
       elevation: 10,
       child: Column(
         children: [
-          const FadeInImage(
-            image: NetworkImage(
-                'https://media.posterlounge.com/images/big/1878321.jpg'),
-            placeholder: AssetImage('assets/images/placeholder.jpg'),
+          FadeInImage(
+            image: NetworkImage(imageUrl),
+            placeholder: const AssetImage('assets/images/placeholder.jpg'),
             width: double.infinity,
             height: 230,
             fit: BoxFit.cover,
-            fadeInDuration: Duration(milliseconds: 200),
+            fadeInDuration: const Duration(milliseconds: 200),
           ),
-          Container(
-            child: const Text('Kill Bill'),
-            padding: EdgeInsets.only(right: 20, top: 10, bottom: 10),
-            alignment: AlignmentDirectional.centerEnd,
-          )
+          if (cardName != null)
+            Container(
+              padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
+              alignment: AlignmentDirectional.centerEnd,
+              child: Text(cardName!),
+            )
         ],
       ),
     );
