@@ -14,7 +14,7 @@ class AlertScreen extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           elevation: 5,
-          title: Text('Title'),
+          title: const Text('Title'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: const [
