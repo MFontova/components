@@ -31,35 +31,45 @@ class InputsScreen extends StatelessWidget {
             key: myFormKey,
             child: Column(
               children: [
-                const CustomInputField(
+                CustomInputField(
                   keyboardType: TextInputType.name,
                   labelText: 'Nombre',
                   hintText: 'Nombre del usuario',
                   icon: Icons.perm_contact_cal,
+                  formProperty: 'first_name',
+                  formValues: formValues,
                 ),
                 const SizedBox(height: 30),
-                const CustomInputField(
+                CustomInputField(
                   keyboardType: TextInputType.name,
                   labelText: 'Apellido',
                   hintText: 'Apellido del usuario',
+                  formProperty: 'second_name',
+                  formValues: formValues,
                 ),
                 const SizedBox(height: 30),
-                const CustomInputField(
+                CustomInputField(
                   keyboardType: TextInputType.emailAddress,
                   labelText: 'Correo electrónico',
                   hintText: 'example@example.com',
+                  formProperty: 'email',
+                  formValues: formValues,
                 ),
                 const SizedBox(height: 30),
-                const CustomInputField(
+                CustomInputField(
                   keyboardType: TextInputType.phone,
                   labelText: 'Teléfono',
                   hintText: '666555444',
+                  formProperty: 'phone',
+                  formValues: formValues,
                 ),
                 const SizedBox(height: 30),
-                const CustomInputField(
+                CustomInputField(
                   labelText: 'Contraseña',
                   hintText: '******',
                   obscureText: true,
+                  formProperty: 'password',
+                  formValues: formValues,
                 ),
                 const SizedBox(
                   height: 30,
