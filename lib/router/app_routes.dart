@@ -49,7 +49,12 @@ class AppRoutes {
         route: 'slider',
         icon: Icons.social_distance_sharp,
         name: 'Slider Screen',
-        screen: SliderScreen())
+        screen: SliderScreen()),
+    MenuOption(
+        route: 'listviewBuilder',
+        icon: Icons.build,
+        name: 'Listview Builder',
+        screen: ListViewBuilderScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
