@@ -1,6 +1,5 @@
 import 'package:components/models/models.dart';
 import 'package:flutter/material.dart';
-
 import '../screens/screens.dart';
 
 class AppRoutes {
@@ -31,6 +30,16 @@ class AppRoutes {
         icon: Icons.card_giftcard,
         name: 'Card',
         screen: CardScreen()),
+    MenuOption(
+        route: 'avatar',
+        icon: Icons.supervised_user_circle,
+        name: 'Avatar',
+        screen: AvatarScreen()),
+    MenuOption(
+        route: 'animated',
+        icon: Icons.animation,
+        name: 'Animated Screen',
+        screen: AnimatedScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

@@ -14,8 +14,24 @@ class AlertScreen extends StatelessWidget {
         builder: (context) {
           return CupertinoAlertDialog(
             title: Text('Title'),
-            content: Text('Contenido de la alerta'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Text('Contenido de la alerta'),
+                SizedBox(
+                  height: 10,
+                ),
+                FlutterLogo(
+                  size: 60,
+                )
+              ],
+            ),
             actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('Cancelar')),
               TextButton(
                   onPressed: () {
                     Navigator.pop(context);
@@ -53,6 +69,11 @@ class AlertScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
+                child: const Text('Cancelar')),
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 child: const Text('Cancelar'))
           ],
         );
@@ -66,7 +87,7 @@ class AlertScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             child: const Text('Mostrar Alerta'),
-            onPressed: () => Platform.isAndroid
+            onPressed: () => !Platform.isAndroid
                 ? displayDialog(context)
                 : displayDialogIos(context)
             // style: ElevatedButton.styleFrom(
