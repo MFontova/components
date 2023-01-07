@@ -44,7 +44,7 @@ class InputsScreen extends StatelessWidget {
                   keyboardType: TextInputType.name,
                   labelText: 'Apellido',
                   hintText: 'Apellido del usuario',
-                  formProperty: 'second_name',
+                  formProperty: 'last_name',
                   formValues: formValues,
                 ),
                 const SizedBox(height: 30),
@@ -73,6 +73,30 @@ class InputsScreen extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 30,
+                ),
+                DropdownButtonFormField(
+                  items: [
+                    DropdownMenuItem(
+                      value: 'Admin',
+                      child: Text('Admin'),
+                    ),
+                    DropdownMenuItem(
+                      value: 'Superuser',
+                      child: Text('Superuser'),
+                    ),
+                    DropdownMenuItem(
+                      value: 'Developer',
+                      child: Text('Developer'),
+                    ),
+                    DropdownMenuItem(
+                      value: 'Junior Developer',
+                      child: Text('Junior Developer'),
+                    ),
+                  ],
+                  onChanged: (String? value) {
+                    print(value);
+                    formValues['role'] = value ?? 'Admin';
+                  },
                 ),
                 ElevatedButton(
                     onPressed: () {

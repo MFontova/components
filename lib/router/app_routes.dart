@@ -45,6 +45,11 @@ class AppRoutes {
         icon: Icons.input,
         name: 'Input Screens',
         screen: InputsScreen()),
+    MenuOption(
+        route: 'slider',
+        icon: Icons.social_distance_sharp,
+        name: 'Slider Screen',
+        screen: SliderScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
