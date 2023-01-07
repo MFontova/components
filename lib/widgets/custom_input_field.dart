@@ -8,6 +8,8 @@ class CustomInputField extends StatelessWidget {
     this.helperText,
     this.suffixIcon,
     this.icon,
+    this.keyboardType,
+    this.obscureText = false,
   }) : super(key: key);
 
   final String? hintText;
@@ -15,10 +17,14 @@ class CustomInputField extends StatelessWidget {
   final String? helperText;
   final IconData? suffixIcon;
   final IconData? icon;
+  final TextInputType? keyboardType;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
+      keyboardType: keyboardType,
       autofocus: false,
       // initialValue: 'Marc Fontova',
       textCapitalization: TextCapitalization.words,
